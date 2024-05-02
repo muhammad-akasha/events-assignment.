@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style> 
+    body{
+      background: darkcyan;font-family: sans-serif
+    }
+    h2{
+      font-size: 40px
+    }
+    .img-container{
+      display: flex;justify-content: center;gap: 40px
+    }
+    img{
+     cursor: pointer;transition: all 3s ease
+    }
+    #img {
+        transition: all 3s ease  
+    }
+    #imgchange{
+      width: 80%;height: 600px;background-size: cover;display: block;margin:  40px auto
+    }
+    .imgdiv{
+      display: flex;justify-content: center;
+    }
+    .imgdiv img {
+      width: 250px ; height: 250px;padding: 20px
+    }
+    
+    #counter{
+      text-align: center;
+    }
+    .button{
+      width: 100px;padding:20px 10px;text-align: center;color: #000;background: #f7f3
+    }
+    .btndiv{
+      display: flex;justify-content: center;gap: 20px
+    }
+    #btn{
+      padding: 20px 20px;width: fit-content;display: block;margin: 50px auto;border: 20px solid #000;border-radius: 20px;background: #f7f3;font-size: 18px;text-transform: capitalize
+    }
+    #signUpForm input , #studentData input , #hiddenform input {
+      width: 400px;height: 25px;margin: 20px;text-align: center
+    }
+    #signUpForm label , #studentData label , #hiddenform label  {
+      font-size: 30px;font-family: cursive;
+    }
+    #data,#data th ,#data td  {
+      border: 2px solid black;border-collapse: collapse;    margin: 20px auto;
+    width: 600px;text-align: center;font-size: 25px;
+}
+.tbtn{
+  padding: 5px 8px
+}
+#submit{
+ width: 300px ;padding: 14px 0px;
+}
+.formDiv{
+  text-align: center
+}
+    </style>
+  </head>
+  <body>
+    <div class="img-container">
+     <img
+      width= "500px"
+      height="500px"
+      onmouseover="swapChange(this , 'second')"
+      onmouseout="swapChange(this,'first')"
+      src="./wall.jpeg"
+      alt="img"
+    />
+    <img
+      id="img"
+      width="400px"
+      height="500px"
+      src="./banner.jpg"
+      alt="img"
+    />
+ </div>
+
+  <button id="btn" onclick="swapClick()"> click to change image</button>
+<div class="imgdiv">
+<img onclick="buyMob()"  src="./images.jpg" alt="mob">
+<img onclick="buyMob()" src="./images (1).jpg" alt="mob">
+<img onclick="buyMob()" src="./download.jpg" alt="mob">
+<img onclick="buyMob()" src="./BM10-Mini-Quad-Band-Phone.jpg" alt="mob">
+</div>
+
+
+<div>
+  <img onmouseover="changeOnHover(this)" onmouseout="changeOnmouseDown(this)" id="imgchange" src="./banner.jpg" alt="big">
+</div>
+
+
+<div id="counter">
+  0
+</div>
+<div class="btndiv">
+  <button class = "button" onclick="plus1()">Increase</button>
+  <button class = "button" onclick="minus1()">Decrease</button>
+</div>
+
+<div class="formDiv">
+<form id="signUpForm">
+  <label> Enter Your Full Name : </label> 
+  <input required  type="text" id="name"> <br>
+  <label>Enter Your Father Name : </label>
+  <input required type="text" id="fathername"> <br>
+  <label>Enter Your Education : </label>
+  <input required type="text" id="education"> <br>
+  <button id="submit"> Submit </button>
+</form>
+</div>
+
+<div id="formData">
+</div>
+
+<div>
+  <p class="paragraph">
+      <br>
+    </p>
+    <span class="seemorebtn">See More</span>
+</div>
+<div class="formDiv">
+<form id="studentData">
+<h2>
+  Student Data
+</h2>
+  <label> Enter Your Name : </label>
+  <input required type="text" name="studentName" id="studentName"> <br> <br>
+  <label> Enter Your Class : </label>
+  <input required type="text" name="class" id="class"> <br> <br>
+  <label> Enter Your RollNo : </label>
+  <input required type="number" name="rollno" id="rollno"> <br> <br>
+  <button id="submit" onclick = "addingData()"> Click to Add Data </button>
+</form>
+</div>
+<table id="data">
+<thead>
+    <th>Index</th>
+  <th>Name</th>
+  <th>Class</th>
+  <th>RollNo</th>
+  <th>Buttons</th>
+</thead>
+<tbody>
+  <tr></tr>
+</tbody>
+</table>
+<div class="formDiv">
+<form id="hiddenform" style="display: none">
+  <h2>
+    Edit Form
+  </h2>
+    <label> Enter Your Name : </label>
+    <input required type="text" name="editname" id="editname"> <br> <br>
+    <label> Enter Your Class : </label>
+    <input required type="text" name="editclass" id="editclass"> <br> <br>
+    <label> Enter Your Name : </label>
+    <input required type="number" name="editrollno" id="editrollno"> <br> <br>
+    <button  id="submit" onclick = "updateData()"> Click TO Add Data </button>
+  </form>
+</div>
+<script src="./index.js"></script> 
+  </body>
+</html>
